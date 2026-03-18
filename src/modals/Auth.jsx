@@ -21,8 +21,11 @@ const Auth = () => {
         email,
         password,
       });
+    console.log(data);
 
       if (data.success) {
+              localStorage.setItem("userToken", data.token);
+
         toast.success(data.message);
         setUser(data.user);
         navigate("/");
