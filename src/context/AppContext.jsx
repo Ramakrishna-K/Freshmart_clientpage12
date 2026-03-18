@@ -192,7 +192,6 @@ export const AppContextProvider = ({ children }) => {
     try {
       const { data } = await axios.get("/api/user/is-auth");
       if (data.success) {
-              localStorage.setItem("userToken", data.token);
 
         setUser(data.user);
         setCartItems(data.user.cart);
